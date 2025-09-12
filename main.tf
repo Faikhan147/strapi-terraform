@@ -33,7 +33,7 @@ resource "kubernetes_deployment" "strapi" {
           name  = "strapi"
           image = "faisalkhan35/strapi-app:latest"
 
-          ports {
+          port {
             container_port = 1337
           }
         }
