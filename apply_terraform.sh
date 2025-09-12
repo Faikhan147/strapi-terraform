@@ -37,3 +37,6 @@ echo "Displaying Terraform outputs..."
 terraform output
 
 echo "Terraform deployment completed successfully!"
+
+kubectl get pods 
+kubectl get svc
