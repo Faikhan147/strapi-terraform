@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # deploy_strapi.sh
 # Full automation for Strapi deployment
@@ -15,16 +14,12 @@ fi
 # Go to home directory
 cd ~
 
-# Clone custom Strapi deployment repo
-echo "Cloning Strapi deployment repo..."
-git clone https://github.com/Faikhan147/Strapi-headless-CMS || echo "Repo already exists, skipping clone"
-
 # Clone Strapi starter blog
 echo "Cloning Strapi starter blog..."
 git clone https://github.com/strapi/strapi-starter-blog.git || echo "Repo already exists, skipping clone"
 
 # Go to Strapi deployment repo
-cd Strapi-headless-CMS
+cd ~/strapi-terraform/strapi-app
 
 # Make setup script executable
 chmod 777 setup.sh
@@ -44,7 +39,7 @@ aws eks update-kubeconfig --name Strapi-Deployment-Cluster --region ap-south-1
 # Copy Dockerfile to Strapi starter blog
 cd ~/strapi-starter-blog
 echo "Copying Dockerfile..."
-cp ~/Strapi-headless-CMS/Dockerfile .
+cp ~/strapi-terraform/strapi-app/Dockerfile .
 
 # Build Docker image
 echo "Building Docker image..."
