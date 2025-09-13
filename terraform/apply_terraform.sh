@@ -6,7 +6,7 @@
 set -e
 
 # Go to Terraform directory (change if needed)
-cd ~/strapi-terraform
+cd ~/strapi-terraform/terraform
 
 echo "Initializing Terraform..."
 terraform init
